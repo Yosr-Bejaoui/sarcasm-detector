@@ -19,12 +19,18 @@ Sarcasm detection is a challenging natural language processing task that require
 ```
 sarcasm-detector/
 ├── iSarcasmEval_EN/
-│   ├── train.En.csv              # Training dataset
-│   └── task_A_En_test.csv        # Test dataset
-├── Model_Exploration.ipynb        # Comprehensive model comparison
-├── fine-tuning RoBERTa.ipynb     # Fine-tuned RoBERTa implementation
-├── comprehensive_model_results.csv # All model evaluation results
-└── README.md                      # Project documentation
+│   ├── train.En.csv                                    # Training dataset
+│   └── task_A_En_test.csv                             # Test dataset
+├── Model_Exploration.ipynb                             # Comprehensive model comparison
+├── fine-tuning RoBERTa.ipynb                          # Fine-tuned RoBERTa implementation
+├── Deep_Project_ML_final.ipynb                        # Deep learning with RoBERTa embeddings
+├── Project_ML_Hyperparameter_Tuning_Optuna (1).ipynb # Hyperparameter optimization using Optuna
+├── Project_ML_Hyperparamters_Grid_ (1).ipynb         # Grid search hyperparameter tuning
+├── comprehensive_model_results.csv                     # All model evaluation results
+├── model_comparison_heatmap.png                       # Performance visualization heatmaps
+├── feature_comparison.png                             # Feature extraction comparison
+├── sampling_comparison.png                            # Sampling technique comparison
+└── README.md                                          # Project documentation
 ```
 
 ## Methodology
@@ -65,7 +71,35 @@ Six different classifiers tested:
 5. **K-Nearest Neighbors (KNN)**: Instance-based learning
 6. **Naive Bayes**: Probabilistic classifier
 
-### 5. Fine-Tuned RoBERTa Model
+### 5. Hyperparameter Optimization
+
+Two advanced hyperparameter tuning approaches:
+
+#### Grid Search (Project_ML_Hyperparamters_Grid_)
+- Exhaustive search through specified parameter combinations
+- Tests models: Logistic Regression, Random Forest, XGBoost, SVM, KNN
+- Uses stratified cross-validation for robust evaluation
+- Feature engineering with emoji counts, punctuation patterns, and text statistics
+
+#### Optuna Optimization (Project_ML_Hyperparameter_Tuning_Optuna)
+- Automated hyperparameter optimization using Bayesian optimization
+- Explores larger parameter spaces efficiently
+- Advanced feature extraction including:
+  - Emoji and punctuation counts
+  - Capitalization patterns
+  - Sentiment polarity (TextBlob)
+  - Linguistic markers (intensifiers, contrast words)
+- Ensemble methods with voting classifiers
+
+### 6. Deep Learning Approach
+
+#### Stacking Ensemble (Deep_Project_ML_final)
+- RoBERTa embeddings as base features
+- Stacked ensemble combining multiple classifiers
+- Advanced text preprocessing with contraction expansion
+- Custom feature engineering pipeline
+
+### 7. Fine-Tuned RoBERTa Model
 
 The final optimized solution uses:
 - **Base Model**: `cardiffnlp/twitter-roberta-base-irony`
@@ -144,7 +178,7 @@ gdown.download(f'https://drive.google.com/uc?id={file_id_train}', 'train.En.csv'
 
 ### Usage
 
-#### Model Exploration
+#### 1. Model Exploration
 
 Run the comprehensive model comparison:
 ```bash
@@ -152,14 +186,55 @@ jupyter notebook "Model_Exploration.ipynb"
 ```
 
 This notebook will:
-- Extract features using TF-IDF and transformer models
-- Apply various sampling techniques
-- Train and evaluate all model combinations
-- Generate comparison visualizations
+- Extract features using TF-IDF and transformer models (BERT, RoBERTa, DistilBERT)
+- Apply various sampling techniques (baseline, under-sampling, over-sampling, SMOTE)
+- Train and evaluate 96 model configurations
+- Generate comparison visualizations (heatmaps, bar charts)
 
-#### Fine-Tuned RoBERTa
+#### 2. Hyperparameter Tuning - Grid Search
 
-Train the optimized RoBERTa model:
+Systematic parameter optimization:
+```bash
+jupyter notebook "Project_ML_Hyperparamters_Grid_ (1).ipynb"
+```
+
+This notebook includes:
+- Comprehensive EDA with visualizations
+- Advanced text preprocessing and feature engineering
+- Grid search across multiple classifiers
+- RoBERTa embeddings with traditional ML models
+- Stacking ensemble approach
+
+#### 3. Hyperparameter Tuning - Optuna
+
+Automated Bayesian optimization:
+```bash
+jupyter notebook "Project_ML_Hyperparameter_Tuning_Optuna (1).ipynb"
+```
+
+Features:
+- Optuna framework for efficient hyperparameter search
+- Rich feature engineering (emojis, sentiment, linguistic patterns)
+- Cross-validation with stratified folds
+- Voting ensemble classifiers
+- Performance visualization and analysis
+
+#### 4. Deep Learning with Stacking
+
+Advanced ensemble approach:
+```bash
+jupyter notebook "Deep_Project_ML_final.ipynb"
+```
+
+Implementation:
+- RoBERTa base embeddings (768 dimensions)
+- Stacked classifier combining multiple models
+- Contraction expansion in preprocessing
+- Custom feature transformers
+
+#### 5. Fine-Tuned RoBERTa
+
+State-of-the-art transformer fine-tuning:
 ```bash
 jupyter notebook "fine-tuning RoBERTa.ipynb"
 ```
@@ -168,7 +243,7 @@ This notebook will:
 - Load and preprocess the iSarcasmEval dataset
 - Fine-tune Twitter-RoBERTa with Focal Loss
 - Optimize classification threshold
-- Evaluate on test set
+- Evaluate on test set with detailed metrics
 
 ## Dataset
 
@@ -212,14 +287,27 @@ Models are evaluated using:
 
 F1-score is prioritized due to class imbalance.
 
+## Project Highlights
+
+This repository demonstrates a comprehensive machine learning workflow:
+
+- **Systematic Experimentation**: From baseline TF-IDF to advanced transformers
+- **Multiple Approaches**: Traditional ML, hyperparameter optimization, and deep learning
+- **Robust Evaluation**: Cross-validation, multiple metrics, and threshold optimization
+- **Feature Engineering**: Text preprocessing, emoji detection, sentiment analysis
+- **Ensemble Methods**: Stacking, voting classifiers, and model combination
+- **Visualization**: Heatmaps and charts for performance comparison
+- **Production-Ready**: Optimized hyperparameters and threshold tuning
+
 ## Future Improvements
 
 - [ ] Experiment with larger transformer models (RoBERTa-large, DeBERTa)
 - [ ] Incorporate contextual features (conversation threads, user history)
 - [ ] Multi-task learning with emotion detection
-- [ ] Ensemble methods combining top-performing models
+- [ ] Advanced ensemble combining Optuna-optimized models with fine-tuned transformers
 - [ ] Cross-lingual sarcasm detection
-- [ ] Real-time deployment pipeline
+- [ ] Real-time deployment pipeline with model serving
+- [ ] Active learning for continuous improvement
 
 ## References
 
