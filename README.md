@@ -141,109 +141,57 @@ The fine-tuned model with threshold optimization achieved superior performance t
 - Focal Loss to prioritize hard examples
 - Optimal decision threshold selection
 
-## Getting Started
+## Experimental Process
 
-### Prerequisites
+This project follows a systematic approach to sarcasm detection, progressing from basic models to advanced deep learning solutions:
 
-```bash
-python >= 3.8
-torch >= 1.9.0
-transformers >= 4.20.0
-scikit-learn >= 1.0.0
-pandas >= 1.3.0
-numpy >= 1.21.0
-xgboost >= 1.5.0
-imbalanced-learn >= 0.9.0
-```
+### Phase 1: Comprehensive Model Exploration
+**Notebook**: `Model_Exploration.ipynb`
 
-### Installation
+Evaluated 96 different configurations combining:
+- 4 feature extraction methods (TF-IDF, BERT, RoBERTa, DistilBERT)
+- 4 sampling techniques (baseline, under-sampling, over-sampling, SMOTE)
+- 6 machine learning models (Logistic Regression, Random Forest, XGBoost, SVM, KNN, Naive Bayes)
 
-1. Clone the repository:
-```bash
-git clone https://github.com/Yosr-Bejaoui/sarcasm-detector.git
-cd sarcasm-detector
-```
+Generated comprehensive performance visualizations including heatmaps and comparison charts.
 
-2. Install dependencies:
-```bash
-pip install torch transformers scikit-learn pandas numpy xgboost imbalanced-learn gdown
-```
+### Phase 2: Hyperparameter Optimization - Grid Search
+**Notebook**: `Project_ML_Hyperparamters_Grid_ (1).ipynb`
 
-3. Download the dataset (automatically done in notebooks):
-```python
-import gdown
-file_id_train = '1x6CbYlfuPZf1-EZFVN-uKcFptlthVGf8'
-gdown.download(f'https://drive.google.com/uc?id={file_id_train}', 'train.En.csv', quiet=False)
-```
+Systematic exploration featuring:
+- Exhaustive grid search for optimal parameters
+- Advanced feature engineering with emoji detection and punctuation patterns
+- RoBERTa embeddings combined with traditional classifiers
+- Stacking ensemble architecture
+- Detailed EDA and visualization
 
-### Usage
+### Phase 3: Hyperparameter Optimization - Optuna
+**Notebook**: `Project_ML_Hyperparameter_Tuning_Optuna (1).ipynb`
 
-#### 1. Model Exploration
-
-Run the comprehensive model comparison:
-```bash
-jupyter notebook "Model_Exploration.ipynb"
-```
-
-This notebook will:
-- Extract features using TF-IDF and transformer models (BERT, RoBERTa, DistilBERT)
-- Apply various sampling techniques (baseline, under-sampling, over-sampling, SMOTE)
-- Train and evaluate 96 model configurations
-- Generate comparison visualizations (heatmaps, bar charts)
-
-#### 2. Hyperparameter Tuning - Grid Search
-
-Systematic parameter optimization:
-```bash
-jupyter notebook "Project_ML_Hyperparamters_Grid_ (1).ipynb"
-```
-
-This notebook includes:
-- Comprehensive EDA with visualizations
-- Advanced text preprocessing and feature engineering
-- Grid search across multiple classifiers
-- RoBERTa embeddings with traditional ML models
-- Stacking ensemble approach
-
-#### 3. Hyperparameter Tuning - Optuna
-
-Automated Bayesian optimization:
-```bash
-jupyter notebook "Project_ML_Hyperparameter_Tuning_Optuna (1).ipynb"
-```
-
-Features:
-- Optuna framework for efficient hyperparameter search
-- Rich feature engineering (emojis, sentiment, linguistic patterns)
-- Cross-validation with stratified folds
+Efficient Bayesian optimization including:
+- Automated hyperparameter search using Optuna framework
+- Rich feature extraction: emojis, sentiment polarity, intensifiers, contrast markers
+- Stratified K-fold cross-validation
 - Voting ensemble classifiers
-- Performance visualization and analysis
+- Advanced performance analysis
 
-#### 4. Deep Learning with Stacking
+### Phase 4: Deep Learning with Stacking
+**Notebook**: `Deep_Project_ML_final.ipynb`
 
 Advanced ensemble approach:
-```bash
-jupyter notebook "Deep_Project_ML_final.ipynb"
-```
+- RoBERTa embeddings (768-dimensional) as base features
+- Multi-model stacking architecture
+- Contraction expansion and sophisticated preprocessing
+- Custom transformer pipelines
 
-Implementation:
-- RoBERTa base embeddings (768 dimensions)
-- Stacked classifier combining multiple models
-- Contraction expansion in preprocessing
-- Custom feature transformers
+### Phase 5: Fine-Tuned Transformer
+**Notebook**: `fine-tuning RoBERTa.ipynb`
 
-#### 5. Fine-Tuned RoBERTa
-
-State-of-the-art transformer fine-tuning:
-```bash
-jupyter notebook "fine-tuning RoBERTa.ipynb"
-```
-
-This notebook will:
-- Load and preprocess the iSarcasmEval dataset
-- Fine-tune Twitter-RoBERTa with Focal Loss
-- Optimize classification threshold
-- Evaluate on test set with detailed metrics
+State-of-the-art solution:
+- Full fine-tuning of Twitter-RoBERTa model
+- Custom Focal Loss for class imbalance handling
+- Threshold optimization on test set
+- Comprehensive evaluation with multiple metrics
 
 ## Dataset
 
