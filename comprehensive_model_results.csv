@@ -1,0 +1,97 @@
+Model,Features,Sampling,Accuracy,F1-Score,Precision,Recall
+Logistic Regression,TFIDF,baseline,0.6455,0.3315,0.3128,0.3526
+Logistic Regression,BERT,baseline,0.6412,0.3971,0.3417,0.474
+Logistic Regression,ROBERTA,baseline,0.6311,0.4483,0.3574,0.6012
+Logistic Regression,DISTILBERT,baseline,0.6182,0.4045,0.3309,0.5202
+Logistic Regression,TFIDF,under_sampling,0.5418,0.374,0.2836,0.5491
+Logistic Regression,BERT,under_sampling,0.5951,0.4182,0.3258,0.5838
+Logistic Regression,ROBERTA,under_sampling,0.611,0.4512,0.348,0.6416
+Logistic Regression,DISTILBERT,under_sampling,0.5764,0.4096,0.3138,0.5896
+Logistic Regression,TFIDF,over_sampling,0.6412,0.2865,0.2841,0.289
+Logistic Regression,BERT,over_sampling,0.6556,0.4099,0.3578,0.4798
+Logistic Regression,ROBERTA,over_sampling,0.6542,0.4619,0.3773,0.5954
+Logistic Regression,DISTILBERT,over_sampling,0.6354,0.4019,0.34,0.4913
+Logistic Regression,TFIDF,smote,0.6441,0.3683,0.3303,0.4162
+Logistic Regression,BERT,smote,0.6542,0.3939,0.3498,0.4509
+Logistic Regression,ROBERTA,smote,0.6527,0.4609,0.3759,0.5954
+Logistic Regression,DISTILBERT,smote,0.6441,0.4048,0.3471,0.4855
+Random Forest,TFIDF,baseline,0.7118,0.2647,0.3636,0.2081
+Random Forest,BERT,baseline,0.7507,0.0114,0.5,0.0058
+Random Forest,ROBERTA,baseline,0.7522,0.0115,1.0,0.0058
+Random Forest,DISTILBERT,baseline,0.7522,0.0115,1.0,0.0058
+Random Forest,TFIDF,under_sampling,0.5706,0.3766,0.2951,0.5202
+Random Forest,BERT,under_sampling,0.5591,0.3651,0.2848,0.5087
+Random Forest,ROBERTA,under_sampling,0.5879,0.4211,0.324,0.6012
+Random Forest,DISTILBERT,under_sampling,0.5879,0.4325,0.3293,0.6301
+Random Forest,TFIDF,over_sampling,0.696,0.299,0.3516,0.2601
+Random Forest,BERT,over_sampling,0.7579,0.0667,0.8571,0.0347
+Random Forest,ROBERTA,over_sampling,0.7522,0.0549,0.5556,0.0289
+Random Forest,DISTILBERT,over_sampling,0.7522,0.0851,0.5333,0.0462
+Random Forest,TFIDF,smote,0.611,0.3216,0.2844,0.3699
+Random Forest,BERT,smote,0.7392,0.3118,0.4556,0.237
+Random Forest,ROBERTA,smote,0.7305,0.249,0.4079,0.1792
+Random Forest,DISTILBERT,smote,0.719,0.2353,0.3659,0.1734
+XGBoost,TFIDF,baseline,0.6816,0.3028,0.3333,0.2775
+XGBoost,BERT,baseline,0.7161,0.2275,0.3537,0.1676
+XGBoost,ROBERTA,baseline,0.7334,0.2912,0.4318,0.2197
+XGBoost,DISTILBERT,baseline,0.7248,0.2738,0.4,0.2081
+XGBoost,TFIDF,under_sampling,0.6052,0.3538,0.2988,0.4335
+XGBoost,BERT,under_sampling,0.5461,0.3836,0.2899,0.5665
+XGBoost,ROBERTA,under_sampling,0.6196,0.4677,0.3591,0.6705
+XGBoost,DISTILBERT,under_sampling,0.572,0.4142,0.3144,0.6069
+XGBoost,TFIDF,over_sampling,0.6902,0.3131,0.35,0.2832
+XGBoost,BERT,over_sampling,0.7133,0.2547,0.3617,0.1965
+XGBoost,ROBERTA,over_sampling,0.7392,0.2846,0.45,0.2081
+XGBoost,DISTILBERT,over_sampling,0.7363,0.2824,0.439,0.2081
+XGBoost,TFIDF,smote,0.7032,0.1557,0.2676,0.1098
+XGBoost,BERT,smote,0.7075,0.3165,0.379,0.2717
+XGBoost,ROBERTA,smote,0.7075,0.3211,0.381,0.2775
+XGBoost,DISTILBERT,smote,0.6888,0.3121,0.3475,0.2832
+SVM,TFIDF,baseline,0.7046,0.2023,0.3095,0.1503
+SVM,BERT,baseline,0.6081,0.4087,0.3275,0.5434
+SVM,ROBERTA,baseline,0.2695,0.3957,0.2492,0.9595
+SVM,DISTILBERT,baseline,0.5865,0.3983,0.3125,0.5491
+SVM,TFIDF,under_sampling,0.5418,0.374,0.2836,0.5491
+SVM,BERT,under_sampling,0.5937,0.4245,0.3281,0.6012
+SVM,ROBERTA,under_sampling,0.5634,0.4637,0.3342,0.7572
+SVM,DISTILBERT,under_sampling,0.5692,0.4326,0.322,0.659
+SVM,TFIDF,over_sampling,0.732,0.1545,0.3617,0.0983
+SVM,BERT,over_sampling,0.6196,0.4054,0.3321,0.5202
+SVM,ROBERTA,over_sampling,0.4222,0.4112,0.2756,0.8092
+SVM,DISTILBERT,over_sampling,0.6066,0.4078,0.3264,0.5434
+SVM,TFIDF,smote,0.745,0.0635,0.375,0.0347
+SVM,BERT,smote,0.6729,0.4165,0.375,0.4682
+SVM,ROBERTA,smote,0.3919,0.3971,0.2638,0.8035
+SVM,DISTILBERT,smote,0.6138,0.4097,0.331,0.5376
+KNN,TFIDF,baseline,0.7435,0.101,0.4,0.0578
+KNN,BERT,baseline,0.7075,0.234,0.337,0.1792
+KNN,ROBERTA,baseline,0.7421,0.2115,0.4444,0.1387
+KNN,DISTILBERT,baseline,0.7046,0.1897,0.3,0.1387
+KNN,TFIDF,under_sampling,0.5605,0.3115,0.2556,0.3988
+KNN,BERT,under_sampling,0.5346,0.394,0.2917,0.6069
+KNN,ROBERTA,under_sampling,0.5893,0.3624,0.2956,0.4682
+KNN,DISTILBERT,under_sampling,0.5101,0.3609,0.2674,0.5549
+KNN,TFIDF,over_sampling,0.4827,0.3315,0.2445,0.5145
+KNN,BERT,over_sampling,0.5576,0.3722,0.288,0.526
+KNN,ROBERTA,over_sampling,0.5576,0.3253,0.2624,0.4277
+KNN,DISTILBERT,over_sampling,0.5519,0.3768,0.2883,0.5434
+KNN,TFIDF,smote,0.2882,0.3976,0.2519,0.9422
+KNN,BERT,smote,0.3156,0.4085,0.2603,0.948
+KNN,ROBERTA,smote,0.3314,0.4185,0.2672,0.9653
+KNN,DISTILBERT,smote,0.3545,0.3995,0.26,0.8613
+Naive Bayes,TFIDF,baseline,0.7507,0.0226,0.5,0.0116
+Naive Bayes,BERT,baseline,0.5778,0.3934,0.3065,0.5491
+Naive Bayes,ROBERTA,baseline,0.562,0.4391,0.3225,0.6879
+Naive Bayes,DISTILBERT,baseline,0.6023,0.439,0.3386,0.6243
+Naive Bayes,TFIDF,under_sampling,0.5245,0.3478,0.2643,0.5087
+Naive Bayes,BERT,under_sampling,0.5303,0.4073,0.2971,0.6474
+Naive Bayes,ROBERTA,under_sampling,0.5965,0.4422,0.3374,0.6416
+Naive Bayes,DISTILBERT,under_sampling,0.5403,0.4104,0.3016,0.6416
+Naive Bayes,TFIDF,over_sampling,0.6081,0.3462,0.2963,0.4162
+Naive Bayes,BERT,over_sampling,0.5937,0.4198,0.3259,0.5896
+Naive Bayes,ROBERTA,over_sampling,0.611,0.449,0.347,0.6358
+Naive Bayes,DISTILBERT,over_sampling,0.572,0.4277,0.3208,0.6416
+Naive Bayes,TFIDF,smote,0.6354,0.3429,0.3113,0.3815
+Naive Bayes,BERT,smote,0.5735,0.3808,0.2984,0.526
+Naive Bayes,ROBERTA,smote,0.5101,0.3885,0.282,0.6243
+Naive Bayes,DISTILBERT,smote,0.5605,0.3863,0.2963,0.5549
