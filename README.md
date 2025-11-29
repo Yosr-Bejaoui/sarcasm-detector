@@ -264,10 +264,7 @@ This repository demonstrates a comprehensive machine learning workflow:
 - **Focal Loss**: Lin et al. (2017) - "Focal Loss for Dense Object Detection"
 - **Twitter-RoBERTa**: Cardiff NLP - Pre-trained on 58M tweets for irony detection
 
-## Author
 
-**Yosr Bejaoui**
-- GitHub: [@Yosr-Bejaoui](https://github.com/Yosr-Bejaoui)
 
 ## License
 
